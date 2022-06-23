@@ -1,0 +1,52 @@
+name: 'My first github action'
+
+on: push
+
+env:
+  WORKFOW_LEVEL: 'THIS VALUE COMES FROM THE WORKFLOW LEVEL'
+# name, on jobs  세가지가 꼭 있어야 한다
+jobs:
+  first-job:
+    name: 'first job'
+    # 잡이라는게 하나의 빌드 서버라고 할 수 있다
+
+    runs-on: ubuntu-latest # 운영체제는 3가지가 있다 윈도우와 맥과 우분투가 있다
+    
+    env:
+      JOB_LEVEL_1: 'THIS COMES FROM JOB LEVEL 1'
+
+    # 실행
+    steps:
+      - name: Say Hello World 1
+      shell: bash
+      STEP_LEVEL_1: 'THIS COMES FROM JOB LEVEL 1'
+      run: |
+        echo "Hello World from step 1"
+      - name: Say Hello World2
+      shell: pwsh
+      run: |
+        echo "Hello World from step 2"
+        echo $WORKFLOW_LEVEL
+        echo $JOB_LEVEL_1
+        echo $STEP_LEVEL_1
+
+    second-job:
+    name: 'first job'
+    # 잡이라는게 하나의 빌드 서버라고 할 수 있다
+
+    runs-on: ubuntu-latest # 운영체제는 3가지가 있다 윈도우와 맥과 우분투가 있다
+    
+    env:
+      JOB_LEVEL_2: 'THIS COMES FROM JOB LEVEL 2'
+
+    # 실행
+    steps:
+      - name: Say Hello World 1
+      shell: bash
+      STEP_LEVEL_2: 'THIS COMES FROM JOB LEVEL 2'
+      run: |
+        echo "Hello World from step 1"
+      - name: Say Hello World2
+      shell: pwsh
+      run: |
+        echo "Hello World from step 2"
