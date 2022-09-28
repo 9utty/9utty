@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:51:36 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/28 06:35:10 by gulee            ###   ########.fr       */
+/*   Created: 2021/11/14 17:49:59 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 07:21:17 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-int	main(int ac, char *av[])
+int	ft_strncmp(const char *str1, const char *str2, size_t size)
 {
-	t_table	table;
+	size_t	index;
 
-	ft_memset(&table, 0, sizeof(t_table));
-	if (ac != 2)
-		err_put();
-	table.mlx = mlx_init();
-	if (!table.mlx)
-		err_put();
-	init_game(&table);
-	table.map.filename = ft_strdup(av[1]);
-	parser(&table);
+	index = 0;
+	if (size == 0)
+		return (0);
+	while ((index < size - 1) && (str1[index] != '\0') \
+		&& (str2[index] != '\0') && str1[index] == str2[index])
+		index++;
+	return ((unsigned char)str1[index] - (unsigned char)str2[index]);
 }

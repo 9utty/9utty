@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:51:36 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/28 06:35:10 by gulee            ###   ########.fr       */
+/*   Created: 2021/11/12 02:33:15 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 07:21:24 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-int	main(int ac, char *av[])
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-	t_table	table;
+	unsigned char	*arr;
+	size_t			count;
 
-	ft_memset(&table, 0, sizeof(t_table));
-	if (ac != 2)
-		err_put();
-	table.mlx = mlx_init();
-	if (!table.mlx)
-		err_put();
-	init_game(&table);
-	table.map.filename = ft_strdup(av[1]);
-	parser(&table);
+	arr = (unsigned char *)ptr;
+	count = 0;
+	while (count < num)
+	{
+		arr[count] = value;
+		count++;
+	}
+	ptr = arr;
+	return (ptr);
 }

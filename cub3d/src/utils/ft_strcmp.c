@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:51:36 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/28 06:35:10 by gulee            ###   ########.fr       */
+/*   Created: 2022/09/28 07:48:17 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 08:16:15 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-int	main(int ac, char *av[])
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	t_table	table;
+	int	index;
 
-	ft_memset(&table, 0, sizeof(t_table));
-	if (ac != 2)
-		err_put();
-	table.mlx = mlx_init();
-	if (!table.mlx)
-		err_put();
-	init_game(&table);
-	table.map.filename = ft_strdup(av[1]);
-	parser(&table);
+	index = 0;
+	while (s1[index] && s2[index])
+	{
+		if (s1[index] == s2[index])
+			index++;
+		else
+			break ;
+	}
+	return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 }

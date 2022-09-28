@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_validation.c                                   :+:      :+:    :+:   */
+/*   parser_get.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:51:24 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/22 22:51:24 by gulee            ###   ########.fr       */
+/*   Created: 2022/09/28 08:25:10 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 08:26:06 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../cub3d.h"
+
+void	get_map(t_table *table)
+{
+	char	**buff;
+	int		index;
+
+	index = 0;
+	while (index < 4)
+	{
+		buff = ft_split(table->cub[index++], ", \n");
+	}
+}

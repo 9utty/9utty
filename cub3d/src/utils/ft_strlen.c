@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:55:19 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/22 22:55:19 by gulee            ###   ########.fr       */
+/*   Created: 2021/11/13 03:24:18 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 07:23:07 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../cub3d.h"
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	count;
+
+	count = 0;
+	if (!str)
+		return (0);
+	while (str[count] != '\0')
+		count++;
+	return (count);
+}

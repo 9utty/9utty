@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 22:51:36 by gulee             #+#    #+#             */
-/*   Updated: 2022/09/28 06:35:10 by gulee            ###   ########.fr       */
+/*   Created: 2021/11/14 16:27:51 by gulee             #+#    #+#             */
+/*   Updated: 2022/09/28 07:21:21 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
-int	main(int ac, char *av[])
+char	*ft_strdup(const char *str)
 {
-	t_table	table;
+	char	*dest;
+	size_t	size;
+	size_t	index;
 
-	ft_memset(&table, 0, sizeof(t_table));
-	if (ac != 2)
-		err_put();
-	table.mlx = mlx_init();
-	if (!table.mlx)
-		err_put();
-	init_game(&table);
-	table.map.filename = ft_strdup(av[1]);
-	parser(&table);
+	index = 0;
+	size = ft_strlen(str);
+	dest = NULL;
+	dest = malloc((sizeof(char) * size) + 1);
+	if (!dest)
+		return (NULL);
+	while (index < size)
+	{
+		dest[index] = str[index];
+		index++;
+	}
+	dest[index] = '\0';
+	return (dest);
 }
