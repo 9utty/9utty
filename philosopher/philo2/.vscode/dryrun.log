@@ -1,0 +1,53 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/gulee/guttyspace/ft/philosopher/philo2'
+mkdir -p obj
+cc -Wall -Werror -Wextra -c src/philo.c -o obj/philo.o
+cc -Wall -Werror -Wextra -c src/action_eat.c -o obj/action_eat.o
+cc -Wall -Werror -Wextra -c src/action_fork.c -o obj/action_fork.o
+cc -Wall -Werror -Wextra -c src/action_sleep.c -o obj/action_sleep.o
+cc -Wall -Werror -Wextra -c src/check_arg.c -o obj/check_arg.o
+cc -Wall -Werror -Wextra -c src/check_philo.c -o obj/check_philo.o
+cc -Wall -Werror -Wextra -c src/error_philo.c -o obj/error_philo.o
+cc -Wall -Werror -Wextra -c src/philo_to_job.c -o obj/philo_to_job.o
+cc -Wall -Werror -Wextra -c src/set_mutex.c -o obj/set_mutex.o
+cc -Wall -Werror -Wextra -c src/set_philo.c -o obj/set_philo.o
+cc -Wall -Werror -Wextra -c src/set_table.c -o obj/set_table.o
+cc -Wall -Werror -Wextra -c src/start_philo.c -o obj/start_philo.o
+cc -Wall -Werror -Wextra -c src/state_print.c -o obj/state_print.o
+cc -Wall -Werror -Wextra -c src/util_all_free.c -o obj/util_all_free.o
+cc -Wall -Werror -Wextra -c src/util_destroy_mutex.c -o obj/util_destroy_mutex.o
+cc -Wall -Werror -Wextra -c src/util_detach.c -o obj/util_detach.o
+cc -Wall -Werror -Wextra -c src/util_ft_atoi.c -o obj/util_ft_atoi.o
+ 
+cc -Wall -Werror -Wextra -c src/util_thread_pause.c -o obj/util_thread_pause.o
+cc -Wall -Werror -Wextra -c src/util_times.c -o obj/util_times.o
+cc -Wall -Werror -Wextra -c src/utils.c -o obj/utils.o
+cc -Wall -Werror -Wextra obj/philo.o obj/action_eat.o obj/action_fork.o obj/action_sleep.o obj/check_arg.o obj/check_philo.o obj/error_philo.o obj/philo_to_job.o obj/set_mutex.o obj/set_philo.o obj/set_table.o obj/start_philo.o obj/state_print.o obj/util_all_free.o obj/util_destroy_mutex.o obj/util_detach.o obj/util_ft_atoi.o obj/util_thread_pause.o obj/util_times.o obj/utils.o -o philo
+make: Leaving directory `/Users/gulee/guttyspace/ft/philosopher/philo2'
+ 
+make: Entering directory `/Users/gulee/guttyspace/ft/philosopher/philo2'
+mkdir -p obj
+cc -Wall -Werror -Wextra -c src/philo.c -o obj/philo.o
+cc -Wall -Werror -Wextra -c src/action_eat.c -o obj/action_eat.o
+cc -Wall -Werror -Wextra -c src/action_fork.c -o obj/action_fork.o
+cc -Wall -Werror -Wextra -c src/action_sleep.c -o obj/action_sleep.o
+cc -Wall -Werror -Wextra -c src/check_arg.c -o obj/check_arg.o
+cc -Wall -Werror -Wextra -c src/check_philo.c -o obj/check_philo.o
+cc -Wall -Werror -Wextra -c src/error_philo.c -o obj/error_philo.o
+cc -Wall -Werror -Wextra -c src/philo_to_job.c -o obj/philo_to_job.o
+cc -Wall -Werror -Wextra -c src/set_mutex.c -o obj/set_mutex.o
+cc -Wall -Werror -Wextra -c src/set_philo.c -o obj/set_philo.o
+cc -Wall -Werror -Wextra -c src/set_table.c -o obj/set_table.o
+cc -Wall -Werror -Wextra -c src/start_philo.c -o obj/start_philo.o
+cc -Wall -Werror -Wextra -c src/state_print.c -o obj/state_print.o
+cc -Wall -Werror -Wextra -c src/util_all_free.c -o obj/util_all_free.o
+cc -Wall -Werror -Wextra -c src/util_destroy_mutex.c -o obj/util_destroy_mutex.o
+cc -Wall -Werror -Wextra -c src/util_detach.c -o obj/util_detach.o
+cc -Wall -Werror -Wextra -c src/util_ft_atoi.c -o obj/util_ft_atoi.o
+cc -Wall -Werror -Wextra -c src/util_thread_pause.c -o obj/util_thread_pause.o
+cc -Wall -Werror -Wextra -c src/util_times.c -o obj/util_times.o
+ 
+cc -Wall -Werror -Wextra -c src/utils.c -o obj/utils.o
+cc -Wall -Werror -Wextra obj/philo.o obj/action_eat.o obj/action_fork.o obj/action_sleep.o obj/check_arg.o obj/check_philo.o obj/error_philo.o obj/philo_to_job.o obj/set_mutex.o obj/set_philo.o obj/set_table.o obj/start_philo.o obj/state_print.o obj/util_all_free.o obj/util_destroy_mutex.o obj/util_detach.o obj/util_ft_atoi.o obj/util_thread_pause.o obj/util_times.o obj/utils.o -o philo
+make: Leaving directory `/Users/gulee/guttyspace/ft/philosopher/philo2'
+ 

@@ -1,0 +1,6 @@
+make: Entering directory `/Users/gulee/guttyspace/ft/gnl'
+gcc -Wall -Wextra -Werror   -c -o get_next_line_utils.o get_next_line_utils.c
+gcc -Wall -Wextra -Werror   -c -o get_next_line.o get_next_line.c
+ar rcs gnl.a get_next_line_utils.o get_next_line.o -I ../includes/get_next_line.h
+make: Leaving directory `/Users/gulee/guttyspace/ft/gnl'
+ 

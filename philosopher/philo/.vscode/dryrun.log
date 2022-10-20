@@ -1,0 +1,16 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/gulee/Downloads/philo'
+mkdir -p obj
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/main.c -o obj/main.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/action.c -o obj/action.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/check_arg.c -o obj/check_arg.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/init.c -o obj/init.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/parser.c -o obj/parser.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/start_philo.c -o obj/start_philo.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/state_print.c -o obj/state_print.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/utils_lib.c -o obj/utils_lib.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/utils_lib_2.c -o obj/utils_lib_2.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread -c src/utils_lib_3.c -o obj/utils_lib_3.o
+cc -Wall -Werror -Wextra -g3 -fsanitize=thread obj/main.o obj/action.o obj/check_arg.o obj/init.o obj/parser.o obj/start_philo.o obj/state_print.o obj/utils_lib.o obj/utils_lib_2.o obj/utils_lib_3.o -o philo
+make: Leaving directory `/Users/gulee/Downloads/philo'
+ 

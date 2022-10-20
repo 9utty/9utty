@@ -1,0 +1,502 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Fri Aug 26 09:03:59 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/gulee/Downloads/philo
+# makefile
+SHELL = /bin/sh
+# makefile (from `Makefile', line 6)
+RM = rm -rf
+# environment
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_translationsConfigFile":"/Users/gulee/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/tcf.json","_cacheRoot":"/Users/gulee/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_resolvedLanguagePackCoreLocation":"/Users/gulee/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/4af164ea3a06f701fe3e89a2bcbb421d2026b68f","_corruptedFile":"/Users/gulee/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/corrupted.info","_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+ 
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/gm/dswh80v13qzdj9n023wn9gc80000gn/T/vscode-ipc-24b38bb6-d837-4da2-b45b-5ea7647873dd.sock
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/gulee/Library/Application Support/JetBrains/Toolbox/scripts:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+# makefile (from `Makefile', line 19)
+DIR_OBJS = obj
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 8)
+PHILO_SRCS = main.c action.c check_arg.c init.c parser.c start_philo.c state_print.c utils_lib.c utils_lib_2.c utils_lib_3.c
+# environment
+LaunchInstanceID = D8956221-1097-45B1-A4DC-1592B66B74D2
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.KUzry3ezPS/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from `Makefile', line 25)
+OBJS = $(addprefix $(DIR_OBJS)/,$(PHILO_OBJS))
+# environment
+PWD = /Users/gulee/Downloads/philo
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/gulee
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/gulee/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+# environment
+LOGNAME = gulee
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/gulee/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 24)
+SRCS = $(addprefix $(DIR_SRCS)/,$(PHILO_SRCS))
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 5)
+CC = cc
+# makefile (from `Makefile', line 20)
+DIR_SRCS = src
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = gulee
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 1)
+NAME = philo
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/gm/dswh80v13qzdj9n023wn9gc80000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/gulee/Library/Application Support/Code/1.68.0-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.14489356.14489362
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x3:0x33
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# makefile (from `Makefile', line 22)
+PHILO_OBJS = $(PHILO_SRCS:.c=.o)
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+SECURITYSESSIONID = 186b2
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from `Makefile', line 3)
+FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=thread
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 590
+# variable set hash-table stats:
+# Load=77/1024=8%, Rehash=0, Collisions=8/110=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777229, inode 16976774): 9 files, no impossibilities.
+# src (device 16777229, inode 16976779): 12 files, no impossibilities so far.
+
+# 21 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+obj/%.o: src/%.c Makefile | obj
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+obj/parser.o: src/parser.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parser'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# Not a target:
+src/utils_lib_3.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/utils_lib.o: src/utils_lib.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `utils_lib'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+all: philo
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+philo: obj/main.o obj/action.o obj/check_arg.o obj/init.o obj/parser.o obj/start_philo.o obj/state_print.o obj/utils_lib.o obj/utils_lib_2.o obj/utils_lib_3.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 31):
+	$(CC) $(FLAGS) $^ -o $@
+	
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/start_philo.o: src/start_philo.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `start_philo'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# Not a target:
+src/action.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:56:57
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/main.o: src/main.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2022-08-26 08:56:59
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+ 
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:49:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/parser.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/state_print.o: src/state_print.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `state_print'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# Not a target:
+src/utils_lib.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:24
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/start_philo.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:56:08
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/utils_lib_2.o: src/utils_lib_2.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `utils_lib_2'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+fclean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 43):
+	$(RM) $(DIR_OBJS)
+	$(RM) $(NAME)
+	
+
+# Not a target:
+src/main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:47
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/check_arg.o: src/check_arg.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `check_arg'
+#  Last modified 2022-08-26 08:56:59
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+obj:
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 37):
+	mkdir -p $@
+	
+
+# Not a target:
+src/state_print.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:54:49
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 40):
+	$(RM) $(DIR_OBJS)
+	
+
+obj/init.o: src/init.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `init'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# Not a target:
+src/utils_lib_2.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/check_arg.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:52:54
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/utils_lib_3.o: src/utils_lib_3.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `utils_lib_3'
+#  Last modified 2022-08-26 08:57:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# Not a target:
+src/init.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 08:50:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/action.o: src/action.c Makefile | obj
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `action'
+#  Last modified 2022-08-26 08:56:59
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 34):
+	$(CC) $(FLAGS) -c $< -o $@
+	
+
+# files hash-table stats:
+# Load=30/1024=3%, Rehash=0, Collisions=0/130=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Fri Aug 26 09:03:59 2022
+
+ 
