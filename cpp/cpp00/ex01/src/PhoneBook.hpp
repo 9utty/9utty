@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 18:47:49 by gulee             #+#    #+#             */
-/*   Updated: 2022/10/25 19:58:28 by gulee            ###   ########.fr       */
+/*   Updated: 2022/10/25 21:26:15 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ private :
 	int		mCount;
 	Contact mContact[MAX_CONTACT];
 	void	mReplaceContact(std::string cmd);
+	void	mReplaceContact();
 	void	mSetContact(int index);
 	void	mPrintContact(std::string cmd);
 };

@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:01:28 by gulee             #+#    #+#             */
-/*   Updated: 2022/10/25 20:08:46 by gulee            ###   ########.fr       */
+/*   Updated: 2022/10/25 22:24:42 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ int	main(void)
 			break ;
 		}
 		if (cmd == "ADD")
-		{
 			PhoneBook.mAddContact();
-			if (PhoneBook.mGetCount() < 8)
-				PhoneBook.mSetCount();
-		}
 		if (cmd == "SEARCH")
 			PhoneBook.mPrintContact();
 		if (cmd == "EXIT")

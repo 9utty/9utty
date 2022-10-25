@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:35:02 by gulee             #+#    #+#             */
-/*   Updated: 2022/10/25 20:09:36 by gulee            ###   ########.fr       */
+/*   Updated: 2022/10/25 22:29:58 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	PhoneBook::mGetInfo()
 
 void	PhoneBook::mSetContact(int index)
 {
+	std::cout << "index" << index << std::endl;
 	mContact[index].mSetFirstName();
 	mContact[index].mSetLastName();
 	mContact[index].mSetNickName();
@@ -43,7 +44,7 @@ void	PhoneBook::mReplaceContact(std::string cmd)
 	index = 0;
 	if (cmd.length() == 1)
 	{
-		if (cmd[0] > '0' && cmd[0] < 9)
+		if (cmd[0] > '0' && cmd[0] < '9')
 			index = cmd[0] - '0';
 			mSetContact(index - 1);
 			return ;
@@ -53,6 +54,15 @@ void	PhoneBook::mReplaceContact(std::string cmd)
 		return ;
 }
 
+void	PhoneBook::mReplaceContact()
+{
+	int index;
+
+	mSetCount();
+	index = mGetCount();
+	mSetContact(index - 1);
+}
+
 void	PhoneBook::mAddContact()
 {
 	static int	index = 0;
@@ -60,7 +70,7 @@ void	PhoneBook::mAddContact()
 
 	if (index == 8)
 	{
-		std::cout << "\033[1;31mPhone Book list is full, \nEnter is Index number to be updated or MENU\n\033[0m > ";
+		std::cout << "\033[1;31mPhone Book list is full, \nEnter is Index number to be updated or R or AUTO\n\033[0m > ";
 		while (std::getline(std::cin, cmd))
 		{
 			if (std::cin.eof())
@@ -70,11 +80,18 @@ void	PhoneBook::mAddContact()
 			}
 			if (cmd == "R")
 				return ;
-			else
+			if (cmd == "AUTO" && cmd.length() == 4)
+			{
+				mReplaceContact();
+				break ;
+			}
+			else if (cmd.length() == 1 && cmd[0] > '0' && cmd[0] < '9')
 			{
 				mReplaceContact(cmd);
 				break ;
 			}
+			else
+				break ;
 		}
 	}
 	else
@@ -93,7 +110,7 @@ void	PhoneBook::mPrintContact(std::string cmd)
 	{
 		if (cmd[0] > '0' && cmd[0] < '9')
 		{
-			index = (cmd[0] - '0') - 1;
+			index = atoi(cmd.c_str()) - 1;
 			mContact[index].mPrintAll();
 			return ;
 		}
@@ -103,13 +120,24 @@ void	PhoneBook::mPrintContact(std::string cmd)
 
 int		PhoneBook::mGetCount()
 {
-	return this->mCount;
+	std::cout << mCount << std::endl;
+	return mCount;
 }
 
 void	PhoneBook::mSetCount()
 {
-	if (this->mCount < 8)
-		this->mCount += 1;
+	static int index = 0;
+
+	if (index < 8)
+	{
+		index += 1;
+		mCount = index;
+	}
+	if (index >= 8)
+	{
+		index = 1;
+		mCount = index;
+	}
 }
 
 void	PhoneBook::mPrintContact()
@@ -142,7 +170,7 @@ void	PhoneBook::mPrintContact()
 	std::cout << "\033[1;31mIndex Number Enther > \033[0m";
 	while (std::getline(std::cin, cmd)) {
 		tmp = atoi(cmd.c_str());
-		if (tmp > mGetCount() || tmp > 8)
+		if (tmp < 0 || tmp > 8)
 		{
 			std::cout << "\033[1;31mError Not Index Empty or Index Error" << std::endl;
 			std::cout << "\033[1;31mIndex Number Enther > \033[0m";
@@ -160,7 +188,7 @@ void	PhoneBook::mPrintContact()
 		else
 		{
 			tmp = atoi(cmd.c_str());
-			if (tmp <= mGetCount() && tmp <= 8)
+			if (tmp >= 1 && tmp <= 8)
            		mPrintContact(cmd);
 			std::cout << "\033[1;31mIndex Number Enther > \033[0m";
         }
