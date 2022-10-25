@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 18:47:49 by gulee             #+#    #+#             */
-/*   Updated: 2022/10/25 15:54:02 by gulee            ###   ########.fr       */
+/*   Updated: 2022/10/25 19:58:28 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ public :
 	void	mAddContact(void);
 	void	mPrintContact(void);
 	void	mPrintMenu(void);
+	int		mGetCount(void);
+	void	mSetCount(void);
 private :
+	int		mCount;
 	Contact mContact[MAX_CONTACT];
 	void	mReplaceContact(std::string cmd);
 	void	mSetContact(int index);

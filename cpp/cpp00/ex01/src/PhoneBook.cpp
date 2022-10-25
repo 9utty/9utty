@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: gulee <gulee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:35:02 by gulee             #+#    #+#             */
-/*   Updated: 2022/10/25 17:05:48 by gulee            ###   ########.fr       */
+/*   Updated: 2022/10/25 20:09:36 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,21 @@ void	PhoneBook::mPrintContact(std::string cmd)
 	}
 }
 
+int		PhoneBook::mGetCount()
+{
+	return this->mCount;
+}
+
+void	PhoneBook::mSetCount()
+{
+	if (this->mCount < 8)
+		this->mCount += 1;
+}
+
 void	PhoneBook::mPrintContact()
 {
 	std::string cmd;
+	int			tmp;
 
 	std::cout << "|-----------|-----------|-----------|-----------|" << std::endl;
     std::cout << "|      index| First name|  Last name|   Nickname|" << std::endl;
@@ -129,7 +141,14 @@ void	PhoneBook::mPrintContact()
 	}
 	std::cout << "\033[1;31mIndex Number Enther > \033[0m";
 	while (std::getline(std::cin, cmd)) {
-        if (std::cin.eof())
+		tmp = atoi(cmd.c_str());
+		if (tmp > mGetCount() || tmp > 8)
+		{
+			std::cout << "\033[1;31mError Not Index Empty or Index Error" << std::endl;
+			std::cout << "\033[1;31mIndex Number Enther > \033[0m";
+			continue ;
+		}
+		if (std::cin.eof())
 		{
             std::cerr << "\033[1;31mPressed Ctrl-D..exit\033[0m\n";
             exit(0);
@@ -140,7 +159,9 @@ void	PhoneBook::mPrintContact()
 		}
 		else
 		{
-            mPrintContact(cmd);
+			tmp = atoi(cmd.c_str());
+			if (tmp <= mGetCount() && tmp <= 8)
+           		mPrintContact(cmd);
 			std::cout << "\033[1;31mIndex Number Enther > \033[0m";
         }
 	}
