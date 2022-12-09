@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:05:25 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/01 19:20:05 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/06 18:22:00 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cmath>
+# include <cstdlib>
 
 class Fixed
 {
