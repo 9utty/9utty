@@ -52,6 +52,8 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"utility": "cpp",
-		"cmath": "cpp"
+		"cmath": "cpp",
+		"__functional_03": "cpp",
+		"__undef_macros": "cpp"
 	}
 }

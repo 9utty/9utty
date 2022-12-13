@@ -1,11 +1,11 @@
-NAME		=	FIXED02
+NAME		=	ClapTrap
 
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 CXX			=	c++
 RM			=	rm -rf
 
 P_SRCS		=	main.cpp \
-				Fixed.cpp
+				ClapTrap.cpp
 
 DIR_OBJS	=	obj
 DIR_SRCS	=	src
