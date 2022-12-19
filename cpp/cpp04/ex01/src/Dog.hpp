@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 17:04:59 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/13 21:41:20 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/14 00:56:42 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/14 02:20:07 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-int main(void)
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Dog : public Animal
 {
-	FragTrap a;
-	FragTrap b("gulee");
+private:
+	Brain* brain;
 
-	a = b;
+public:
+	Dog(void);
+	Dog(std::string name);
+	Dog(const Dog& ref);
+	Dog& operator=(const Dog& ref);
+	virtual ~Dog(void);
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << "Name : " <<b.mGetName() << std::endl;
+	void makeSound(void) const;
+};
 
-	a.takeDamage(20);
-	a.beRepaired(1);
-
-	a.attack("gulee1");
-	b.attack("gulee2");
-
-	a.highFivesGuys();
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	return 0;
-}
+#endif

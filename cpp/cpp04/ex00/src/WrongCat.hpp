@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 17:04:59 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/13 21:41:20 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/14 01:16:23 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/14 01:51:01 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int main(void)
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	FragTrap a;
-	FragTrap b("gulee");
+public:
+	WrongCat(void);
+	WrongCat(std::string arg);
+	WrongCat(const WrongCat& ref);
+	WrongCat& operator=(const WrongCat& ref);
+	virtual ~WrongCat(void);
 
-	a = b;
+	void makeSound(void) const;
+};
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << "Name : " <<b.mGetName() << std::endl;
-
-	a.takeDamage(20);
-	a.beRepaired(1);
-
-	a.attack("gulee1");
-	b.attack("gulee2");
-
-	a.highFivesGuys();
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	return 0;
-}
+#endif

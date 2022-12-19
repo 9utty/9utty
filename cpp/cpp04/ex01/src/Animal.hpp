@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 17:05:06 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/14 01:44:33 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/14 01:49:45 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 # include <string>
@@ -30,35 +30,22 @@
 # define BACK_MAGENTA	"\033[45m"
 # define BACK_WHITE		"\033[47m"
 
-class ClapTrap
+class Animal
 {
+protected:
+	std::string type;
 private:
-	std::string mName;
-	unsigned int mHitPoints;
-	unsigned int mEnergyPoints;
-	unsigned int mAttackDamage;
+
 public:
-	ClapTrap(void);
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap& ref);
-	ClapTrap& operator=(const ClapTrap& ref);
-	virtual~ClapTrap(void);
+	Animal(void);
+	Animal(std::string type);
+	Animal(const Animal& ref);
+	Animal& operator=(const Animal& ref);
+	virtual ~Animal(void);
 
-	void attack(const std::string& Name);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-
-	std::string mGetName(void) const;
-	unsigned int mGetHitPoints(void) const;
-	unsigned int mGetEnergyPoints(void) const;
-	unsigned int mGetAttackDamage(void) const;
-
-	void mSetName(std::string ReName);
-	void mSetHitPoints(unsigned int Hit);
-	void mSetEnergyPoints(unsigned int Energy);
-	void mSetAttackDamage(unsigned int Damage);
+	virtual void makeSound(void) const;
+	std::string mGetType(void) const;
+	void mSetType(std::string arg);
 };
-
-std::ostream& operator<<(std::ostream& o, ClapTrap const& ref);
 
 #endif

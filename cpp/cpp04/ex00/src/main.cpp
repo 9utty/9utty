@@ -5,32 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 17:04:59 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/13 21:41:20 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/13 21:43:33 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/14 01:33:47 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
-	FragTrap a;
-	FragTrap b("gulee");
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->mGetType() << " " << std::endl;
+	std::cout << i->mGetType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 
-	a = b;
+	delete(meta);
+	delete(j);
+	delete(i);
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << "Name : " <<b.mGetName() << std::endl;
+	std::cout << "\n\n\n";
 
-	a.takeDamage(20);
-	a.beRepaired(1);
+	const WrongAnimal* wrong = new WrongCat();
+	std::cout << wrong->mGetType() << " " << std::endl;
+	wrong->makeSound();
 
-	a.attack("gulee1");
-	b.attack("gulee2");
+	delete(wrong);
 
-	a.highFivesGuys();
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
 	return 0;
 }

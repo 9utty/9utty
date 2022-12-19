@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 17:04:53 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/01 19:05:59 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/14 01:43:59 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed(void)
 	std::cout << "\033[33mDefault constructor called\033[0m" << std::endl;
 }
 
-Fixed::Fixed(Fixed const& src)
+Fixed::Fixed(const Fixed& src)
 {
 	std::cout << "\033[32mCopy constructor called\033[0m" << std::endl;
 	this->mFixedPoint = src.getRawBits();
@@ -29,7 +29,7 @@ Fixed::~Fixed(void)
 	std::cout << "\033[31mDestructor called\033[0m" << std::endl;
 }
 
-Fixed& Fixed::operator=(Fixed const& rhs)
+Fixed& Fixed::operator=(const Fixed& rhs)
 {
 	std::cout << "\033[35mCopy assignment operator called\033[0m" << std::endl;
 	if (this != &rhs)

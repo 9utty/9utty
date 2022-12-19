@@ -1,11 +1,13 @@
-NAME		=	FIXED02
+NAME		=	ScavTrap
 
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 CXX			=	c++
 RM			=	rm -rf
 
 P_SRCS		=	main.cpp \
-				Fixed.cpp
+				ScavTrap.cpp \
+				ClapTrap.cpp
+
 
 DIR_OBJS	=	obj
 DIR_SRCS	=	src

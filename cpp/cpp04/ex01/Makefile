@@ -1,13 +1,14 @@
-NAME		=	FragTrap
+NAME		=	Brain
 
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 CXX			=	c++
 RM			=	rm -rf
 
 P_SRCS		=	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp
+				Animal.cpp \
+				Dog.cpp \
+				Cat.cpp \
+
 
 DIR_OBJS	=	obj
 DIR_SRCS	=	src

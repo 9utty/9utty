@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 17:04:59 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/13 21:41:20 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/14 00:41:48 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/14 02:15:03 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main(void)
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class Cat : public Animal
 {
-	FragTrap a;
-	FragTrap b("gulee");
+private:
+	Brain* brain;
 
-	a = b;
+public:
+	Cat(void);
+	Cat(std::string name);
+	Cat(const Cat& ref);
+	Cat& operator=(const Cat& ref);
+	virtual ~Cat(void);
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << "Name : " <<b.mGetName() << std::endl;
+	void makeSound(void) const;
+};
 
-	a.takeDamage(20);
-	a.beRepaired(1);
-
-	a.attack("gulee1");
-	b.attack("gulee2");
-
-	a.highFivesGuys();
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	return 0;
-}
+#endif

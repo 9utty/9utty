@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 17:04:56 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/09 18:30:28 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/14 01:44:58 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << GREEN << this->mGetName() << " : Create." << RESET << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const& ref)
+ClapTrap::ClapTrap(const ClapTrap& ref)
+		: mName(ref.mName), mHitPoints(ref.mHitPoints), mEnergyPoints(ref.mEnergyPoints), mAttackDamage(ref.mAttackDamage)
 {
-	*this = ref;
 	std::cout << BLUE << "Copy Create." << RESET << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(ClapTrap const& ref)
+ClapTrap& ClapTrap::operator=(const ClapTrap& ref)
 {
 	if (this != &ref)
 	{
@@ -53,7 +53,7 @@ ClapTrap::~ClapTrap(void)
 	std::cout << RED << this->mGetName() << " : Delete." << RESET << std::endl;
 }
 
-void ClapTrap::attack(const std::string& target)
+void ClapTrap::attack(const std::string& Name)
 {
 	if (this->mGetHitPoints() == 0)
 	{
@@ -62,10 +62,10 @@ void ClapTrap::attack(const std::string& target)
 	}
 	if (this->mGetEnergyPoints() == 0)
 	{
-		std::cout << BACK_RED << "Error >> " << this->mGetName() << " : Can not attack. (Energy zero)" << RESET << std::endl;
+		std::cout << BACK_RED << "Error >> " << this->mGetName() << " : Can not attack. (EnergyPoints zero)" << RESET << std::endl;
 		return ;
 	}
-	std::cout << MAGENTA << "ClapTrap " << this->mGetName() << " attacks" << target << ", causing " << this->mGetAttackDamage() << " point of damage!" << RESET <<std::endl;
+	std::cout << MAGENTA << "ClapTrap " << this->mGetName() << " attacks " << Name << ", causing " << this->mGetAttackDamage() << " point of damage!" << RESET <<std::endl;
 	this->mSetEnergyPoints(this->mGetEnergyPoints() - 1);
 }
 
@@ -84,12 +84,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->mGetEnergyPoints() == 0)
 	{
-		std::cout << BACK_RED << "Error >> " << this->mGetName() << "Can not repair. (Energy zero)" << RESET << std::endl;
+		std::cout << BACK_RED << "Error >> " << this->mGetName() << "Can not repair. (EnergyPoints zero)" << RESET << std::endl;
 		return ;
 	}
 	if (this->mGetHitPoints() == 0 || this->mGetHitPoints() == UINT_MAX)
 	{
-		std::cout << BACK_RED << "Error >> " << this->mGetName() << "Can not repair. (HitPoints zero)" << RESET << std::endl;
+		std::cout << BACK_RED << "Error >> " << this->mGetName() << "Can not repair. (HitPoints zero or UINT_MAX)" << RESET << std::endl;
 		return ;
 	}
 	this->mSetHitPoints((this->mGetHitPoints() + amount > this->mGetHitPoints()) ? (this->mGetHitPoints() + amount) : (UINT_MAX));
@@ -117,7 +117,7 @@ unsigned int ClapTrap::mGetAttackDamage(void) const
 
 void ClapTrap::mSetName(std::string ReName)
 {
-	this->mName = ReName;
+	this->mName.assign(ReName);
 }
 
 void ClapTrap::mSetHitPoints(unsigned int Hit)

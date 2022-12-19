@@ -1,13 +1,11 @@
-NAME		=	FragTrap
+NAME		=	ClapTrap
 
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 CXX			=	c++
 RM			=	rm -rf
 
 P_SRCS		=	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp
+				ClapTrap.cpp
 
 DIR_OBJS	=	obj
 DIR_SRCS	=	src
