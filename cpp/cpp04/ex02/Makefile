@@ -1,11 +1,14 @@
-NAME		=	ClapTrap
+NAME		=	abstract
 
 FLAGS		=	-Wall -Werror -Wextra -std=c++98
 CXX			=	c++
 RM			=	rm -rf
 
 P_SRCS		=	main.cpp \
-				ClapTrap.cpp
+				Animal.cpp \
+				Brain.cpp \
+				Cat.cpp \
+				Dog.cpp
 
 DIR_OBJS	=	obj
 DIR_SRCS	=	src

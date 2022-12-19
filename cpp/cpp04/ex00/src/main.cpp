@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 21:43:33 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/14 01:33:47 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 00:19:48 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,13 @@ int main(void)
 	std::cout << wrong->mGetType() << " " << std::endl;
 	wrong->makeSound();
 
+	const WrongCat* WCat = new WrongCat();
+	std::cout << WCat->mGetType() << " " << std::endl;
+	WCat->makeSound();
+
+	delete(WCat);
 	delete(wrong);
 
+	system("leaks Poly");
 	return 0;
 }

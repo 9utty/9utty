@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 01:39:54 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/19 22:50:22 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/19 23:37:36 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-# include <string>
 # include <iostream>
+# include <string>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
@@ -30,19 +30,20 @@
 # define BACK_MAGENTA	"\033[45m"
 # define BACK_WHITE		"\033[47m"
 
-# define IDEA_MAX (100)
-class Brain
+class Animal
 {
+protected:
+	std::string type;
 public:
-	std::string ideas[IDEA_MAX];
-	int mIdeasIndex;
+	Animal(void);
+	Animal(std::string type);
+	Animal(const Animal& ref);
+	Animal& operator=(const Animal& ref);
+	virtual ~Animal(void);
 
-	Brain(void);
-	Brain(const Brain& ref);
-	virtual ~Brain(void);
-	Brain& operator=(const Brain& ref);
-
-	void mThinking(const std::string thinking);
+	virtual void makeSound(void) const;
+	std::string mGetType(void) const;
+	void mSetType(std::string arg);
 };
 
 #endif

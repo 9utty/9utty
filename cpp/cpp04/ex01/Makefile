@@ -8,6 +8,7 @@ P_SRCS		=	main.cpp \
 				Animal.cpp \
 				Dog.cpp \
 				Cat.cpp \
+				Brain.cpp
 
 
 DIR_OBJS	=	obj

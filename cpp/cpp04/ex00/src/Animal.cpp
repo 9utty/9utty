@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 00:20:31 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/14 01:49:40 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 01:12:06 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal& Animal::operator=(const Animal& ref)
 {
 	if (this != &ref)
 	{
-		this->mSetType(ref.mGetType());
+		this->type = ref.mGetType();
 		std::cout << BLUE << this->mGetType() << ": Insert Finish." << RESET << std::endl;
 		return *this;
 	}

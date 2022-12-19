@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/14 01:49:45 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/19 23:37:41 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ class Animal
 {
 protected:
 	std::string type;
-private:
-
 public:
 	Animal(void);
 	Animal(std::string type);
