@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 03:26:10 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:34:15 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:27:13 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << BLUE << "PresidentialPardonForm execute create." << RESET << std::endl;
 	if (this->getExecGrade() < executor.getGrade())
 		throw GradeTooLowException();
+	if (this->getSigned() != true)
+		throw IsNotSignException();
+	std::cout << BLUE << "PresidentialPardonForm execute create." << RESET << std::endl;
 	std::cout << GREEN << this->getName() << " has been pardoned by Zaphod Beebleborx." << RESET << std::endl;
+
 }

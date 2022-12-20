@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 00:32:54 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:46:19 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:46:30 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ public:
 	{
 		virtual const char* what() const throw();
 	};
-
 	void decrement(void);
 	void increment(void);
 	void signForm(Form& form);

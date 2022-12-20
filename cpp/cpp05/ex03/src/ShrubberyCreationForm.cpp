@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 04:02:06 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:34:52 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:30:12 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << BLUE << "ShrubberyCreationForm execute create." << RESET << std::endl;
 	if (this->getExecGrade() < executor.getGrade())
 		throw GradeTooLowException();
+  if (this->getSigned() != true)
+		throw IsNotSignException();
+	std::cout << BLUE << "ShrubberyCreationForm execute create." << RESET << std::endl;
 
     std::ofstream file(executor.getName() + "_shrubbery");
 

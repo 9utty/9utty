@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 01:40:39 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:36:18 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:12:43 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	bool getSigned(void) const;
 	unsigned int getSignGrade(void) const;
 	unsigned int getExecGrade(void) const;
-	void beSigned(const Bureaucrat& ref);
+	virtual void beSigned(const Bureaucrat& ref);
 	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception
@@ -46,6 +46,10 @@ public:
 		const char* what() const throw();
 	};
 	class IsAlreadyException : public std::exception
+	{
+		const char* what() const throw();
+	};
+	class IsNotSignException : public std::exception
 	{
 		const char* what() const throw();
 	};

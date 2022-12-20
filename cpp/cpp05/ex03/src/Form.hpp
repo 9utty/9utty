@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 01:40:39 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:36:18 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:29:13 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ public:
 		const char* what() const throw();
 	};
 	class IsAlreadyException : public std::exception
+	{
+		const char* what() const throw();
+	};
+	class IsNotSignException : public std::exception
 	{
 		const char* what() const throw();
 	};

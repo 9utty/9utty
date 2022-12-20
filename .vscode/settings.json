@@ -58,6 +58,7 @@
 		"typeinfo": "cpp",
 		"utility": "cpp",
 		"cmath": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"list": "cpp"
 	}
 }

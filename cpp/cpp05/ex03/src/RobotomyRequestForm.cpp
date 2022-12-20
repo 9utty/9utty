@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 03:46:58 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:34:33 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:29:55 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << BLUE << "RobotomyRequestForm execute create." << RESET << std::endl;
 	if (this->getExecGrade() < executor.getGrade())
 		throw GradeTooLowException();
+	if (this->getSigned() != true)
+		throw IsNotSignException();
+	std::cout << BLUE << "RobotomyRequestForm execute create." << RESET << std::endl;
 	std::cout << RED << "Drilling noises..............................." << RESET << std::endl;
 	srand(time(NULL));
 	if (rand() % 2 == 0)

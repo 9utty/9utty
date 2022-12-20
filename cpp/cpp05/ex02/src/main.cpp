@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 00:32:01 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 04:40:59 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:11:11 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ void test1(void)
 	Bureaucrat test1("gulee", 46);
 	Form *ptr1 = new RobotomyRequestForm("Robot");
 	try {
+		ptr1->beSigned(test1);
 		test1.executeForm(*ptr1);
 		test1.decrement();
+		test1.executeForm(*ptr1);
 		test1.executeForm(*ptr1);
 		delete ptr1;
 	} catch (std::exception& e) {
@@ -39,7 +41,9 @@ void test2(void)
 
 	try
 	{
+		ptr2->beSigned(test2);
 		test2.executeForm(*ptr2);
+		ptr2->beSigned(test3);
 		test3.executeForm(*ptr2);
 		test2.increment();
 		test3.increment();
@@ -59,6 +63,7 @@ void test3(void)
 	try
 	{
 		test4.executeForm(*ptr4);
+		ptr4->beSigned(test4);
 		test4.increment();
 		test4.executeForm(*ptr4);
 		delete ptr4;

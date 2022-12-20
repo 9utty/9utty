@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 01:40:32 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 03:24:33 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 19:28:01 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,12 @@ unsigned int Form::getExecGrade(void) const
 
 void Form::beSigned(const Bureaucrat& ref)
 {
-	if (this->getSigned() == true)
+	if (this->mIsSign == true)
 		throw (IsAlreadyException());
 	if (ref.getGrade() > this->mSignGrade)
 		throw (GradeTooLowException());
 	this->mIsSign = true;
+	std::cout << BACK_WHITE << "\nclear\n" << RESET << std::endl;
 }
 
 const char* Form::GradeTooHighException::what(void) const throw()
@@ -100,6 +101,11 @@ const char* Form::GradeTooLowException::what(void) const throw()
 const char* Form::IsAlreadyException::what(void) const throw()
 {
 	return ("\033[41mIt's a signed Form\033[0m");
+}
+
+const char* Form::IsNotSignException::what(void) const throw()
+{
+	return ("\033[41mIs a not signed.\033[0m");
 }
 
 std::ostream& operator<<(std::ostream& os, const Form &ref)
