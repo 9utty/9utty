@@ -5,36 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 02:23:05 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:46:15 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 09:17:53 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 09:27:31 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "whatever.hpp"
 
 int main(void)
 {
-	// const Animal *k = new Animal();
-	// k->makeSound();
-	// delete k;
+	int a = 2;
+	int b = 3;
 
-	const Animal* j = new Dog();
-	j->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
-	const Animal* i = new Cat();
-	i->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
+	std::string c = "gulee1";
+	std::string d = "gulee2";
 
-	delete j;
-	std::cout << std::endl;
-	delete i;
-	std::cout << std::endl;
-
-	system("leaks abstract");
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
 	return 0;
 }

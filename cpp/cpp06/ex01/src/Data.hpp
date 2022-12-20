@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:45:36 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 08:11:50 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 08:18:34 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
 
 # include <iostream>
-# include <string>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
@@ -30,20 +29,12 @@
 # define BACK_MAGENTA	"\033[45m"
 # define BACK_WHITE		"\033[47m"
 
-class Animal
+typedef struct s_data
 {
-protected:
-	std::string type;
-public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal& ref);
-	Animal& operator=(const Animal& ref);
-	virtual ~Animal(void);
+	int n;
+} Data;
 
-	virtual void makeSound(void) const = 0;
-	std::string mGetType(void) const;
-	void mSetType(std::string arg);
-};
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
 #endif

@@ -5,36 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 02:23:05 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:46:15 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 10:56:20 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 11:02:12 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "easyfind.hpp"
 
 int main(void)
 {
-	// const Animal *k = new Animal();
-	// k->makeSound();
-	// delete k;
+	std::list<int> arg;
+	arg.push_back(1);
+	arg.push_back(2);
+	arg.push_back(3);
+	arg.push_back(4);
+	arg.push_back(5);
 
-	const Animal* j = new Dog();
-	j->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
-	const Animal* i = new Cat();
-	i->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
+	try
+	{
+		std::cout << easyfind(arg, 3) << std::endl;
+		std::cout << easyfind(arg, 6) << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Not found" << '\n';
+	}
 
-
-	delete j;
-	std::cout << std::endl;
-	delete i;
-	std::cout << std::endl;
-
-	system("leaks abstract");
 
 	return 0;
 }

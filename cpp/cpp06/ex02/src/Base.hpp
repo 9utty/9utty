@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:45:36 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 08:42:40 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 08:50:18 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
 # include <iostream>
-# include <string>
+# include <exception>
+# include <cstdlib>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
@@ -30,20 +31,10 @@
 # define BACK_MAGENTA	"\033[45m"
 # define BACK_WHITE		"\033[47m"
 
-class Animal
+class Base
 {
-protected:
-	std::string type;
 public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal& ref);
-	Animal& operator=(const Animal& ref);
-	virtual ~Animal(void);
-
-	virtual void makeSound(void) const = 0;
-	std::string mGetType(void) const;
-	void mSetType(std::string arg);
+	virtual ~Base(void);
 };
 
 #endif

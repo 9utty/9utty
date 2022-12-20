@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 00:20:38 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:45:36 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 06:55:47 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 08:25:13 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
 
-# include <iostream>
-# include <string>
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <exception>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
@@ -30,20 +32,24 @@
 # define BACK_MAGENTA	"\033[45m"
 # define BACK_WHITE		"\033[47m"
 
-class Animal
+class Convert
 {
-protected:
-	std::string type;
-public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal& ref);
-	Animal& operator=(const Animal& ref);
-	virtual ~Animal(void);
+private:
+	double value;
+	char* ptr;
 
-	virtual void makeSound(void) const = 0;
-	std::string mGetType(void) const;
-	void mSetType(std::string arg);
+public:
+	Convert(void);
+	Convert(char* argv);
+	Convert(const Convert& ref);
+	Convert& operator=(const Convert& ref);
+	virtual ~Convert(void);
+
+	void toChar(void);
+	void toInt(void);
+	void toFloat(void);
+	void toDouble(void);
+
 };
 
 #endif

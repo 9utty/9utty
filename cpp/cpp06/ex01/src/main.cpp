@@ -5,36 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 02:23:05 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:46:15 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 08:10:48 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 08:26:09 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Data.hpp"
 
 int main(void)
 {
-	// const Animal *k = new Animal();
-	// k->makeSound();
-	// delete k;
+	uintptr_t ptr;
+	Data newData;
 
-	const Animal* j = new Dog();
-	j->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
-	const Animal* i = new Cat();
-	i->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
+	newData.n = 555;
 
-
-	delete j;
-	std::cout << std::endl;
-	delete i;
-	std::cout << std::endl;
-
-	system("leaks abstract");
-
+	ptr = serialize(&newData);
+	std::cout << BACK_GREEN << "\tptr: " << ptr << RESET << std::endl;
+	std::cout.flags(std::ios::hex);
+	std::cout << BACK_GREEN << "\tptr(hex): " << ptr << RESET << std::endl;
+	std::cout << BACK_GREEN << "\tptr(address): " << reinterpret_cast<void *>(&newData) << RESET << std::endl;
+	std::cout.unsetf(std::ios::hex);
+	std::cout << BACK_MAGENTA << "\t" << deserialize(ptr)->n << RESET << std::endl;
 	return 0;
+
 }

@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 00:20:31 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 01:11:32 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/20 09:45:15 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ Animal& Animal::operator=(const Animal& ref)
 Animal::~Animal(void)
 {
 	std::cout << RED << this->mGetType() << " : Animal Delete." << RESET << std::endl;
-}
-
-void Animal::makeSound(void) const
-{
-	std::cout << BACK_WHITE << "Animal makeSound()" << RESET << std::endl;
 }
 
 std::string Animal::mGetType(void) const

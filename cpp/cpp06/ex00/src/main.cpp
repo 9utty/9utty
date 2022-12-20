@@ -5,36 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 02:23:05 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 09:46:15 by gulee            ###   ########.fr       */
+/*   Created: 2022/12/20 06:55:05 by gulee             #+#    #+#             */
+/*   Updated: 2022/12/20 08:01:32 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Convert.hpp"
 
-int main(void)
+int main(int argc, char* argv[])
 {
-	// const Animal *k = new Animal();
-	// k->makeSound();
-	// delete k;
-
-	const Animal* j = new Dog();
-	j->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
-	const Animal* i = new Cat();
-	i->makeSound();
-	std::cout << std::endl;
-	std::cout << std::endl;
-
-
-	delete j;
-	std::cout << std::endl;
-	delete i;
-	std::cout << std::endl;
-
-	system("leaks abstract");
-
+	if (argc != 2)
+	{
+		std::cout << BACK_RED << "Check argument number" << RESET << std::endl;
+		return 1;
+	}
+	try
+	{
+		Convert conv(argv[1]);
+		conv.toChar();
+		conv.toInt();
+		conv.toFloat();
+		conv.toDouble();
+		return 0;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 0;
+	}
 	return 0;
 }
