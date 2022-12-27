@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 00:32:41 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 19:46:42 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/27 17:43:28 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(const std::string name, const unsigned int grade)
 	: mName(name), mGrade(grade)
 {
 	if (mGrade > GRADE_MAX)
-		throw GradeTooHighException();
-	else if (mGrade < GRADE_MIN)
 		throw GradeTooLowException();
+	else if (mGrade < GRADE_MIN)
+		throw GradeTooHighException();
 	std::cout << GREEN << this->getName() << " : Bureaucrat Create." << RESET << std::endl;
 }
 
@@ -32,9 +32,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat& ref)
 	: mName(ref.getName()), mGrade(ref.getGrade())
 {
 	if (this->mGrade > GRADE_MAX)
-		throw GradeTooHighException();
-	else if (this->mGrade < GRADE_MIN)
 		throw GradeTooLowException();
+	else if (this->mGrade < GRADE_MIN)
+		throw GradeTooHighException();
 	std::cout << BLUE << this->getName() << " : Bureaucrat Copy Create." << RESET << std::endl;
 }
 
@@ -42,11 +42,11 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& ref)
 {
 	if (this != &ref)
 	{
-		this->mGrade = ref.mGrade;
-		if (this->mGrade > GRADE_MAX)
-			throw GradeTooHighException();
-		else if (this->mGrade < GRADE_MIN)
+		if (ref.getGrade() > GRADE_MAX)
 			throw GradeTooLowException();
+		else if (ref.getGrade() < GRADE_MIN)
+			throw GradeTooHighException();
+		this->mGrade = ref.mGrade;
 		std::cout << BLUE << this->getName() << ": Insert Finish." << RESET << std::endl;
 		return *this;
 	}
@@ -64,11 +64,11 @@ Bureaucrat::~Bureaucrat(void)
 
 void Bureaucrat::decrement(void)
 {
-	if (this->mGrade > GRADE_MAX)
-		throw GradeTooHighException();
-	else if (this->mGrade < GRADE_MIN)
+	if (this->mGrade + 1 > GRADE_MAX)
 		throw GradeTooLowException();
-	this->mGrade -= 1;
+	else if (this->mGrade < GRADE_MIN)
+		throw GradeTooHighException();
+	this->mGrade += 1;
 	std::cout << BACK_MAGENTA << getName() << " : Decreasing grade" << RESET << std::endl;
 }
 
@@ -76,9 +76,9 @@ void Bureaucrat::increment(void)
 {
 	if (this->mGrade > GRADE_MAX)
 		throw GradeTooHighException();
-	else if (this->mGrade < GRADE_MIN)
+	else if (this->mGrade - 1 < GRADE_MIN)
 		throw GradeTooLowException();
-	this->mGrade += 1;
+	this->mGrade -= 1;
 	std::cout << BACK_GREEN << getName() << " : Increasing grade" << RESET << std::endl;
 }
 
