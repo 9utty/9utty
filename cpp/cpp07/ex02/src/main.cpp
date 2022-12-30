@@ -6,7 +6,7 @@
 /*   By: gulee <gulee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 09:53:55 by gulee             #+#    #+#             */
-/*   Updated: 2022/12/20 10:42:32 by gulee            ###   ########.fr       */
+/*   Updated: 2022/12/29 16:29:09 by gulee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int main(void)
 		Array<std::string> d(c);
 		Array<std::string> e;
 		e = d;
-		d[0] = "The";
-		d[1] = "Beckoning";
-		d[2] = "of";
-		d[3] = "Lovely";
+		d[0] = "Construction";
+		d[1] = "by";
+		d[2] = "copy";
+		d[3] = "good";
 		std::cout << d << std::endl;
 	}
 	catch (std::exception& e){
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 }
