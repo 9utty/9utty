@@ -1,6 +1,7 @@
 # Contact.
 - 이건학 | 배우는게 재밌는 신입개발자
 - Email.   leegh4250@gmail.com
+- Blog.    https://9utty.netlify.app
 
 # Skill.
 - Typescript, Javascript, Nest.JS, TypeORM, React.JS, React Native
