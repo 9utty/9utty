@@ -1,20 +1,22 @@
 # Connect.
 <div>
-<li>
-   이건학 | 배우는게 재밌는 프론트엔드개발자
-</li>
-<li>
-   Email.   leegh4250@gmail.com
-</li>
-<li>
-   Blog.    https://9utty.com
-</li>
-   
+   <li>
+      이건학 | 배우는게 재밌는 프론트엔드개발자
+   </li>
+   <li>
+      Email.   leegh4250@gmail.com
+   </li>
+   <li>
+      Blog.    https://9utty.com
+   </li>
 </div>
+
+<br />
+<br />
+<br />
 
 # Skill.
 <div align="start">
-  
 <br />
 <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black"/>
 <br />
@@ -26,12 +28,17 @@
 <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"/>
 <br />
 <br />
-<hr />
 <br />
 </div>
 
 
 # Education.
-- 한국방송통신대학교
-   컴퓨터과학과2022년~ (휴학중)
-- 42Seoul ~ 
+<li>
+   한국방송통신대학교
+   <ul>
+      컴퓨터과학과2022년~ (휴학중)
+   </ul>
+</li>
+<li>
+   42Seoul ~ 
+</li>
