@@ -7,7 +7,7 @@
       Email.   leegh4250@gmail.com
    </li>
    <li>
-      Blog.    https://9utty.com
+      Blog.    https://9utty.world
    </li>
 </div>
 
