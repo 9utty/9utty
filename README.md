@@ -1,13 +1,13 @@
 # 🤝 Connect
 <div>
    <li>
-      이건학 | 배우는게 재밌는 프론트엔드개발자
+      Email | leegh4250@gmail.com
    </li>
    <li>
-      Email.   leegh4250@gmail.com
+      Blog | https://9utty.life
    </li>
    <li>
-      Blog.    https://9utty.life
+      Linkedin | https://www.linkedin.com/in/건학-이-651294226
    </li>
 </div
 
