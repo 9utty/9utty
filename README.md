@@ -1,4 +1,4 @@
-# Connect
+# 🤝 Connect
 <div>
    <li>
       이건학 | 배우는게 재밌는 프론트엔드개발자
@@ -9,7 +9,7 @@
    <li>
       Blog.    https://9utty.life
    </li>
-</div>
+</div
 
 <br />
 <br />
