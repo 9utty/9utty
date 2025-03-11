@@ -6,9 +6,6 @@
    <li>
       Blog | https://9utty.life
    </li>
-   <li>
-      Linkedin | https://www.linkedin.com/in/건학-이-651294226
-   </li>
 </div
 
 <br />
